@@ -1,0 +1,66 @@
+.content {
+  width: 80%;
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  min-height: 40rem;
+}
+.headerportion {
+  width: 90%;
+  align-self: center;
+}
+.linecontent {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+.left,
+.right {
+  display: flex;
+  gap: 1rem;
+}
+.left {
+  padding-left: 1rem;
+}
+.right {
+  padding-right: 1rem;
+}
+.midportion {
+  width: 90%;
+  align-self: center;
+}
+.filter button {
+  width: 50px;
+  height: 30px;
+  border: 1px solid black;
+  animation-name: filterbutton;
+  animation-duration: 1s;
+  transition: transform 0.1s ease;
+}
+@keyframes filterbutton {
+  from {
+    opacity: 0;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(1%);
+  }
+}
+.filter {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  &.diplay {
+    display: block;
+  }
+  &.none {
+    display: none;
+  }
+}
+.checkboxmain {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

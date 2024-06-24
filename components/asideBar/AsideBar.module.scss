@@ -1,0 +1,19 @@
+.main {
+  width: 20%;
+  min-height: 82vh;
+  background-color: rgb(110, 184, 113);
+  padding-top: 0.5rem;
+}
+.main ul {
+  padding: 0;
+  margin: 0;
+}
+.main li {
+  display: flex;
+  flex-direction: column;
+}
+.sidebarbutton {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}

@@ -1,0 +1,39 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 4rem;
+}
+.section1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  background-color: white;
+}
+.section2 {
+  width: 80%;
+  background-color: rgb(110, 184, 113);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+.left {
+  height: 100%;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+}
+.left:hover,
+.right:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
