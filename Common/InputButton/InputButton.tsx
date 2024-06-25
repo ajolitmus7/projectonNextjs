@@ -28,23 +28,22 @@ const InputButton: React.FC<FileUploadInputProps> = ({
         width: "40%",
         alignSelf: "left",
         backgroundColor: "f7f7ff",
-        padding: ".5rem",
+        marginBottom: "1rem",
         display: "flex",
         gap: "1rem",
       }}
     >
-      <form onClick={() => document.querySelector(".input-field").click()}>
+      <div className={style.box}>
         {React.createElement(icon, {})}
-        <span>File attachment</span>
+        <span>Add attachment</span>
         <input
           type="file"
           className="hidden"
           ref={fileInputRef}
           onChange={handleFileChange}
           accept={accept}
-          hidden
         />
-      </form>
+      </div>
     </div>
   );
 };

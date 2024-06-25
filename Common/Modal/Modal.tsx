@@ -62,6 +62,19 @@ const Modal = ({ setIsOpen }: any) => {
   const handleFileSelect = (file: File): any => {
     console.log("Selected file:", file);
   };
+  const getCurrentTime = () => {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const year = String(now.getFullYear()).slice(-2);
+    const date = `${day}/${month}/${year}`;
+    const time = now.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
+    return date.concat(" ", time);
+  };
   return (
     <>
       <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
@@ -105,6 +118,7 @@ const Modal = ({ setIsOpen }: any) => {
                 options={PriorityOptions}
                 style={{ width: "50%" }}
               />
+              <span className={styles.dateBox}>{getCurrentTime()}</span>
             </div>
           </div>
           <div className={styles.modalActions}>

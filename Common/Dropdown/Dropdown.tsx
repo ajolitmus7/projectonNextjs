@@ -2,13 +2,13 @@ import React from "react";
 import styles from "./Dropdown.module.scss";
 import Label from "@/Common/Label/Label";
 interface dropdownprops {
-  label: string;
-  options: string[];
+  label?: string;
+  options: { label: string; value: string }[];
   value: string;
   id: string;
-  hasError: boolean;
+  hasError?: boolean;
   onChange: React.FC;
-  style: React.CSSProperties;
+  style?: React.CSSProperties;
 }
 const Dropdown = ({
   label,
