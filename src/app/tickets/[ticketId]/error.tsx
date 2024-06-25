@@ -2,14 +2,9 @@
 import React from "react";
 
 const error = () => {
+  const design = { width: "80%", display: "flex", justifyContent: "center" };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        width:80%
-      }}
-    >
+    <div style={design}>
       <h2>ERROR FOUND</h2>
     </div>
   );

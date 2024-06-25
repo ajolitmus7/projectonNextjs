@@ -32,6 +32,7 @@ const Ticket = () => {
   // );
   const setData = filterData(searchQuery, tableData);
   const dataFiltered = setData.length === 0 ? tableData : setData;
+  console.log(IsOpen);
   return (
     <div className={style.content}>
       <div className={style.headerportion}>

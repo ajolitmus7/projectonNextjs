@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Dropdown.module.scss";
+import Label from "@/Common/Label/Label";
 interface dropdownprops {
   label: string;
   options: string[];
@@ -7,6 +8,7 @@ interface dropdownprops {
   id: string;
   hasError: boolean;
   onChange: React.FC;
+  style: React.CSSProperties;
 }
 const Dropdown = ({
   label,
@@ -15,9 +17,10 @@ const Dropdown = ({
   value,
   id,
   hasError = false,
+  style,
 }: dropdownprops) => {
   return (
-    <div className={styles.dropdown}>
+    <div className={styles.dropdown} style={style}>
       <Label
         htmlFor={id}
         text={label}

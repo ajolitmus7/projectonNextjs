@@ -1,0 +1,18 @@
+.text-box {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+.textsetup input {
+  padding: 0.5rem;
+}
+.text-box:focus {
+  border-color: #007bff;
+  outline: none;
+}
+.textsetup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}

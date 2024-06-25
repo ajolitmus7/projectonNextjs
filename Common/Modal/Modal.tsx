@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Modal.module.scss";
 import { RiCloseLine } from "react-icons/ri";
+import Dropdown from "../Dropdown/Dropdown";
+import { Category } from "@mui/icons-material";
+import TextBox from "../TextBox/TextBox";
+import TextArea from "../TextArea/TextArea";
+import { GoPaperclip } from "react-icons/go";
+import InputButton from "../InputButton/InputButton";
 
 const Modal = ({ setIsOpen }: any) => {
   const [dropdownValues, setDropdownValues] = useState({
@@ -13,12 +19,36 @@ const Modal = ({ setIsOpen }: any) => {
     dropdown2: false,
     dropdown3: false,
   });
-  const requestoptions = [
+  const RequestOptions: { value: string; label: string }[] = [
     { value: "", label: "" },
     { value: "Service Request", label: "Service Request" },
     { value: "Incident", label: "Incident" },
   ];
-  const handleChange = (id) => (e) => {
+  const CategoryOptions: { value: string; label: string }[] = [
+    {
+      value: "",
+      label: "",
+    },
+  ];
+  const PriorityOptions: { value: string; label: string }[] = [
+    {
+      value: "medium",
+      label: "medium",
+    },
+    {
+      value: "Urgent",
+      label: "Urgent",
+    },
+    {
+      value: "High",
+      label: "High",
+    },
+    {
+      value: "Low",
+      label: "Low",
+    },
+  ];
+  const handleChange = (id: any) => (e: any) => {
     const { value } = e.target;
     setDropdownValues((prevValues) => ({
       ...prevValues,
@@ -29,6 +59,9 @@ const Modal = ({ setIsOpen }: any) => {
       [id]: value === "",
     }));
   };
+  const handleFileSelect = (file: File): any => {
+    console.log("Selected file:", file);
+  };
   return (
     <>
       <div className={styles.darkBG} onClick={() => setIsOpen(false)} />
@@ -37,13 +70,41 @@ const Modal = ({ setIsOpen }: any) => {
           <div className={styles.modalHeader}>
             <h5 className={styles.heading}>Create Ticket</h5>
           </div>
-          {/* <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
+          <button className={styles.closeBtn} onClick={() => setIsOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
-          </button> */}
+          </button>
           <div className={styles.modalContent}>
             <div className={styles.firstline}>
-              <Modal label="Request Type" options={requestoptions} />
-              <Modal label={"Category"} />
+              <Dropdown
+                label="Request Type"
+                options={RequestOptions}
+                style={{ width: "50%" }}
+              />
+              <Dropdown
+                label="Category"
+                options={CategoryOptions}
+                style={{ width: "50%" }}
+              />
+            </div>
+            <div className={styles.secondline}>
+              <TextBox text="Title" />
+            </div>
+            <div className={styles.thirdline}>
+              <TextArea rows={10} cols={10} text="Description" />
+            </div>
+            <div className={styles.fourthline}>
+              <InputButton
+                onFileSelect={handleFileSelect}
+                accept="image/*"
+                icon={GoPaperclip}
+              />
+            </div>
+            <div className={styles.fourthline}>
+              <Dropdown
+                label="Priority"
+                options={PriorityOptions}
+                style={{ width: "50%" }}
+              />
             </div>
           </div>
           <div className={styles.modalActions}>

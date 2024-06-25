@@ -1,0 +1,31 @@
+/* src/components/TextArea.css */
+
+.text-area-container {
+  display: flex;
+  flex-direction: column;
+}
+textarea {
+  padding: 1rem;
+}
+.text-area {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical; /* Allows the user to resize the textarea vertically */
+}
+
+.text-area:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.text-area.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 4px;
+}

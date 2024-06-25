@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Table from "@mui/joy/Table";
 import { useRouter } from "next/navigation";
@@ -5,8 +6,8 @@ const TableS = ({ data }: any) => {
   const router = useRouter();
   const handleClick:
     | React.MouseEventHandler<HTMLTableRowElement>
-    | undefined = (code: string) => {
-    router.push(`/ticket/${code}`);
+    | undefined = (code: any) => {
+    router.push(`/tickets/${code}`);
   };
   return (
     <Table aria-label="basic table">

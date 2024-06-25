@@ -11,8 +11,7 @@ const MainHeader = () => {
         <Image
           src={logo}
           alt="logo"
-          objectFit="contain"
-          style={{ width: "8rem", height: "4rem" }}
+          style={{ width: "8rem", height: "4rem", objectFit: "contain" }}
         />
       </section>
       <section className={styles.section2}>

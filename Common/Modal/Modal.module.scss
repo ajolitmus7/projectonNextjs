@@ -44,7 +44,7 @@
 }
 
 .modalContent {
-  padding: 10px;
+  padding: 3%;
   font-size: 14px;
   color: #2c3e50;
   text-align: center;
@@ -123,4 +123,11 @@
   box-shadow: none;
   transform: none;
   background: whitesmoke;
+}
+.firstline {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
 }

@@ -1,13 +1,13 @@
-"use Client";
+"use client";
 import React from "react";
 
-const page = ({ params }: any) => {
+const error = ({ error }: any) => {
   const design = { width: "80%", display: "flex", justifyContent: "center" };
   return (
     <div style={design}>
-      <h2>ticket number {params.ticketId}</h2>
+      <h2>ERROR FOUND {error.message}</h2>
     </div>
   );
 };
 
-export default page;
+export default error;
